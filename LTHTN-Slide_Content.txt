@@ -69,7 +69,8 @@ Noi dung trinh bay
             camera.stop_recording()
             camera.stop_preview()
         Pi se mo cua so preview, ghi hinh trong 10 giay, sau do dong cua so preview.
-
+    8. Thay doi cai dat anh va them hieu ung hinh anh
+    
 
 
         
