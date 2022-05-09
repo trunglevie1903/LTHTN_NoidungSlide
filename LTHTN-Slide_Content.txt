@@ -45,7 +45,7 @@ Gioi thieu noi dung trinh bay
             MP4Box -add <path_to_raw_video> <path_to_save_.mp4_video>
             rm <path_to_raw_video> // Neu ban khong muon xoa raw video thi khong can chay command nay
         
-    5. Dieu khien module Camera voi Python code
+    5. Dieu khien module Camera voi Python
         Mo Python3 Editor, vd Thonny Python IDE
         Tao 1 file moi, save lai voi ten bat ky
         Nhap doan code sau vao file vua tao
@@ -58,5 +58,18 @@ Gioi thieu noi dung trinh bay
         Save va chay doan code tren. Camera se hien thi 1 cua so preview dai 10 giay va sau do dong cua so lai.
         Luu y: Preview chi chay khi co 1 man hinh ket noi den Pi. Neu su dung remote access thi se khong the thay doan preview ay
         Ban co the tim hieu them ve PiCamera theo link documentation nay: https://picamera.readthedocs.io/en/release-1.13/
+    6. Chup anh voi Python
+        Them dong camera.capture(<path_to_save_image>) vao truoc dong camera.stop_preview(), sau do chay code.
+        Luu y nho: Viec sleep it nhat 2 giay la kha quan trong de cam bien trong camera co thoi gian cam nhan muc do sang cua moi truong xung quanh
+    7. Ghi video voi Python
+        Chinh sua doan code cua ban lai cho giong doan code duoi day, sau do chay code.
+            camera.start_preview()
+            camera.start_recording(<path_to_save_raw_video>)
+            sleep(10)
+            camera.stop_recording()
+            camera.stop_preview()
+        Pi se mo cua so preview, ghi hinh trong 10 giay, sau do dong cua so preview.
+
+
 
         
