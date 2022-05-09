@@ -1,4 +1,62 @@
 Gioi thieu
     Noi dung thuyet trinh - Accessing to Camera
     Thanh vien nhom - ...
-    
+
+Gioi thieu noi dung trinh bay
+    1. Mo dau - Gioi thieu noi dung slide
+        Huong dan cach ket noi module Camera den Rasp Pi va chup anh, ghi lai video va ap dung mot vai hieu ung hinh anh
+    2. Cac thiet bi can thiet
+        Mot Rasp Pi co 1 cong cho module Camera
+        Mot module Camera chuyen dung cua Rasp Pi
+    3. Ket noi module Camera
+        Ket noi vat ly
+        - Xac dinh vi tri cua cong module Camera
+        - Nhe nhang keo vao hai ben cua nap nhua gan vao port
+        - Gan day cap cua module Camera vao, phai dam bao diem ket noi o cuoi day cap va diem ket noi o trong cong module ket noi voi nhua
+        - An nap nhua ve vi tri cu
+
+        Ket noi phan mem
+        - Bat Rasp Pi len 
+        - Nhan vao Main Menu -> Raspberry Pi Configuration
+        - Chon tab Interfaces va chac chan rang camera da duoc Bat
+        - Reboot lai Pi
+    4. Dieu khien module Camera tu command line cua Pi
+        Click cua so mau den tren taskbar de mo cua so Terminal
+        De chup mot buc anh va luu no vao mot duong dan nao do, nhap vao terminal cau lenh:
+            raspistill --output/-o <path_to_save>
+        Nhan Enter de chay command. Sau khi nhan Enter, ta co the xem preview cua buc anh trong 5 giay truoc khi Pi chup mot buc anh.
+        Ta co the thay doi thuoc tinh cua buc anh se duoc chup.
+            Vi du, them -w 640 -h 480 vao command o tren se thay doi kich thuoc cua buc anh chup duoc ve 640x480
+        De tim hieu them ve raspistill, day la link den 1 documentation chung minh tim duoc: https://thepihut.com/blogs/raspberry-pi-roundup/raspberry-pi-camera-board-raspistill-command-list
+
+        Bay gio, de ghi lai 1 video su dung module Camera ta dung command sau:
+            raspiivid -o/--output <path_to_save>
+        De xem video tren, double click vao file duoc luu theo duong dan ban vua nhap.
+        Video co do dai mac dinh la 5s.
+        Neu muon thay doi thoi gian ghi hinh video, them -t <time_by_seconds> vao command tren.
+        De tim hieu them ve raspivid, day la link den 1 documentation ma chung minh tim duoc: https://thepihut.com/blogs/raspberry-pi-roundup/raspberry-pi-camera-board-raspivid-command-list
+
+        Pi ghi lai video voi dinh dang raw H264. Nhieu media player se khong the chay duoc video tren, tru khi video do duoc chuyen sang dinh dang MP4.
+        Cach de nhat de tao ra 1 video .MP4 tu raspivid command la su dung MP4Box
+        Cai dat MP4Box bang cau lenh
+            sudo apt install -y gpac
+        Sau do capture raw video tu raspivid va boc no bang mot MP4 container nhu sau
+            raspivid -o/--output <path_to_save_raw_video>
+            MP4Box -add <path_to_raw_video> <path_to_save_.mp4_video>
+            rm <path_to_raw_video> // Neu ban khong muon xoa raw video thi khong can chay command nay
+        
+    5. Dieu khien module Camera voi Python code
+        Mo Python3 Editor, vd Thonny Python IDE
+        Tao 1 file moi, save lai voi ten bat ky
+        Nhap doan code sau vao file vua tao
+            from picamera import PiCamera
+            from time import sleep
+            camera = PiCamera()
+            camera.start_preview()
+            sleep(10)
+            camera.stop_preview()
+        Save va chay doan code tren. Camera se hien thi 1 cua so preview dai 10 giay va sau do dong cua so lai.
+        Luu y: Preview chi chay khi co 1 man hinh ket noi den Pi. Neu su dung remote access thi se khong the thay doan preview ay
+        Ban co the tim hieu them ve PiCamera theo link documentation nay: https://picamera.readthedocs.io/en/release-1.13/
+
+        
