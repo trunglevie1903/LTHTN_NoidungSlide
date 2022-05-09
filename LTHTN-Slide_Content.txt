@@ -2,7 +2,7 @@ Gioi thieu
     Noi dung thuyet trinh - Accessing to Camera
     Thanh vien nhom - ...
 
-Gioi thieu noi dung trinh bay
+Noi dung trinh bay
     1. Mo dau - Gioi thieu noi dung slide
         Huong dan cach ket noi module Camera den Rasp Pi va chup anh, ghi lai video va ap dung mot vai hieu ung hinh anh
     2. Cac thiet bi can thiet
