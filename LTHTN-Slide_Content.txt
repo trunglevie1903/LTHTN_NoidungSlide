@@ -57,7 +57,7 @@ Noi dung trinh bay
             camera.stop_preview()
         Save va chay doan code tren. Camera se hien thi 1 cua so preview dai 10 giay va sau do dong cua so lai.
         Luu y: Preview chi chay khi co 1 man hinh ket noi den Pi. Neu su dung remote access thi se khong the thay doan preview ay
-        Ban co the tim hieu them ve PiCamera theo link documentation nay: https://picamera.readthedocs.io/en/release-1.13/
+        Ban co the tim hieu them ve package picamera theo link documentation nay: https://picamera.readthedocs.io/en/release-1.13/
     6. Chup anh voi Python
         Them dong camera.capture(<path_to_save_image>) vao truoc dong camera.stop_preview(), sau do chay code.
         Luu y nho: Viec sleep it nhat 2 giay la kha quan trong de cam bien trong camera co thoi gian cam nhan muc do sang cua moi truong xung quanh
@@ -70,7 +70,21 @@ Noi dung trinh bay
             camera.stop_preview()
         Pi se mo cua so preview, ghi hinh trong 10 giay, sau do dong cua so preview.
     8. Thay doi cai dat anh va them hieu ung hinh anh
-    
-
+        8a. Thay doi do phan giai
+            Do phan giai se duoc cai mac dinh theo do phan giai cua man hinh. Do phan giai toi da la 2592x1944 cho anh, va 1920x1080 cho ghi video.
+            De thay doi do phan giai, su dung dong code sau:
+                w = <your_desired_width>
+                h = <your_desired_height>
+                camera.resolution = (w, h)
+            Ta can thiet lap FPS = 15 de co the preview va chup anh o do phan giai toi da. Btw, do phan giai toi thieu la 64x64.
+        8b. Them text vao anh
+            Su dung camera.annotate_text(<your_text>) de them text vao anh.
+        8c. Thay doi do sang
+            Ta co the dung lenh camera.brightness = <your_desired_brightness> de thay doi.
+            Do sang mac dinh la 50. Gia tri do sang nam trong khoang 0 den 100.
+        8d. Apply hieu ung hinh anh
+            Ta co the dung lenh camera.image_effect = <your_desired_effect> de ap dung mot hieu ung nao do.
+            Mot so hieu ung hinh anh ma chung minh biet: none (default), negative, film, blur, cartoon, colorswap, colorswap
+            
 
         
