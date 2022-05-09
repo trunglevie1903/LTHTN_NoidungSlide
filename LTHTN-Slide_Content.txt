@@ -23,14 +23,14 @@ Noi dung trinh bay
     4. Dieu khien module Camera tu command line cua Pi
         Click cua so mau den tren taskbar de mo cua so Terminal
         De chup mot buc anh va luu no vao mot duong dan nao do, nhap vao terminal cau lenh:
-            raspistill --output/-o <path_to_save>
+            raspistill --output <path_to_save>
         Nhan Enter de chay command. Sau khi nhan Enter, ta co the xem preview cua buc anh trong 5 giay truoc khi Pi chup mot buc anh.
         Ta co the thay doi thuoc tinh cua buc anh se duoc chup.
             Vi du, them -w 640 -h 480 vao command o tren se thay doi kich thuoc cua buc anh chup duoc ve 640x480
         De tim hieu them ve raspistill, day la link den 1 documentation chung minh tim duoc: https://thepihut.com/blogs/raspberry-pi-roundup/raspberry-pi-camera-board-raspistill-command-list
 
         Bay gio, de ghi lai 1 video su dung module Camera ta dung command sau:
-            raspiivid -o/--output <path_to_save>
+            raspiivid --output <path_to_save>
         De xem video tren, double click vao file duoc luu theo duong dan ban vua nhap.
         Video co do dai mac dinh la 5s.
         Neu muon thay doi thoi gian ghi hinh video, them -t <time_by_seconds> vao command tren.
@@ -41,7 +41,7 @@ Noi dung trinh bay
         Cai dat MP4Box bang cau lenh
             sudo apt install -y gpac
         Sau do capture raw video tu raspivid va boc no bang mot MP4 container nhu sau
-            raspivid -o/--output <path_to_save_raw_video>
+            raspivid --output <path_to_save_raw_video>
             MP4Box -add <path_to_raw_video> <path_to_save_.mp4_video>
             rm <path_to_raw_video> // Neu ban khong muon xoa raw video thi khong can chay command nay
         
