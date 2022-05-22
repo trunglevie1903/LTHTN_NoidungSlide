@@ -30,10 +30,10 @@ Noi dung trinh bay
         De tim hieu them ve raspistill, day la link den 1 documentation chung minh tim duoc: https://thepihut.com/blogs/raspberry-pi-roundup/raspberry-pi-camera-board-raspistill-command-list
 
         Bay gio, de ghi lai 1 video su dung module Camera ta dung command sau:
-            raspiivid --output <path_to_save>
+            raspivid --output <path_to_save>
         De xem video tren, double click vao file duoc luu theo duong dan ban vua nhap.
         Video co do dai mac dinh la 5s.
-        Neu muon thay doi thoi gian ghi hinh video, them -t <time_by_seconds> vao command tren.
+        Neu muon thay doi thoi gian ghi hinh video, them -t <time_by_miliseconds> vao command tren.
         De tim hieu them ve raspivid, day la link den 1 documentation ma chung minh tim duoc: https://thepihut.com/blogs/raspberry-pi-roundup/raspberry-pi-camera-board-raspivid-command-list
 
         Pi ghi lai video voi dinh dang raw H264. Nhieu media player se khong the chay duoc video tren, tru khi video do duoc chuyen sang dinh dang MP4.
